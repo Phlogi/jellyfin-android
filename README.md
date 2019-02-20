@@ -55,4 +55,12 @@ Android Studio will write over `gradlew` occasionally but doesn't set it as exec
 
 ### File not Found `index.html`
 
-Make sure the web source has been properly copied to `www` using gulp. If you are using Android Studio you have to build with cordova at least once so the files are copied into the android source files.
+Make sure the web source has been properly copied to `www` using gulp and by running:
+```sh
+git submodule update --init --recursive
+# re-create the docker image afterwards
+docker build . 
+```
+in the cloned git repo. 
+
+If you are using Android Studio you have to build with cordova at least once so the files are copied into the android source files.
